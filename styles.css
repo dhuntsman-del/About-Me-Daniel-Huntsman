@@ -1,0 +1,253 @@
+.top-nav {
+    position: fixed;     /* stays in the top-right no matter what */
+    top: 20px;
+    right: 20px;
+    z-index: 9999;       /* above all other elements */
+
+    display: flex;
+    flex-direction: column;  /* vertical stack */
+    gap: 12px;
+}
+
+.top-nav a {
+    color: white !important;
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 6px 14px;
+    background-color: #0a1a3c;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+
+
+/* General Body */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0a1a3c;  /* Navy blue background */
+  color: #ffffff;              /* White text */
+}
+
+/* Header */
+.header {
+  background-color: #000000;  /* Black header */
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Navigation Links */
+.header nav a {
+  color: #ffffff;  /* White links */
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.header nav a:hover {
+  color: #0a1a3c;  /* Hover effect: navy blue */
+  background-color: #ffffff; /* Highlight background */
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Main Content Div */
+.main-content {
+  margin: 20px auto;
+  width: 80%;
+  max-width: 900px;
+  padding: 20px;
+  background-color: #000000; /* Black content background */
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+/* Headings */
+h1, h2 {
+  color: #ffffff;
+}
+
+/* Paragraphs */
+p, li {
+  color: #ffffff;
+}
+
+/* Images */
+.main-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px 0;
+  border: 2px solid #ffffff; /* optional white border for contrast */
+  border-radius: 4px;
+}
+
+/* Tableau Embed Section */
+.tableau-embed {
+  margin-top: 20px;
+  text-align: center;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background-color: #000000; /* black footer */
+  padding: 10px;
+  margin-top: 20px;
+  border-top: 2px solid #ffffff;
+}
+
+/* Ordered & Unordered Lists Styling */
+ol, ul {
+  margin-left: 20px;
+  color: #ffffff;
+}
+
+ol li ul li {
+  color: #ffffff;
+}
+
+.centered-image {
+  display: block;       /* centers the image */
+  margin: 20px auto;    /* vertical spacing + horizontal centering */
+  max-width: 80%;       /* makes it larger but responsive */
+  height: auto;         /* maintains aspect ratio */
+  border-radius: 8px;   /* optional: rounded corners for a polished look */
+  border: 2px solid #ffffff; /* optional: white border for contrast */
+}
+
+
+
+    .profile-photo {
+    display: block;
+    margin: 20px auto; /* centers image */
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #ffffff;
+    position: static; /* remove absolute positioning */
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.content-white {
+    background-color: #ffffff; /* white background */
+    padding: 40px 0;           /* optional spacing top/bottom */
+}
+
+.back-to-top {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.back-to-top a {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #0a1a3c; /* Navy */
+    color: white;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.back-to-top a:hover {
+    background-color: #ffffff;
+    color: #0a1a3c;
+}
+
+/* General Body */
+body {
+  margin: 0;
+  font-family: 'Verdana', sans-serif;
+  background-color: #0a1a3c; /* Navy */
+  color: white;
+}
+
+/* Header */
+.scratch-header {
+  background-color: black;
+  padding: 20px;
+  text-align: center;
+}
+
+.scratch-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: white;
+}
+
+.scratch-header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+/* Main Content Container */
+.scratch-main {
+  background-color: white;
+  color: black;
+  width: 80%;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Section Styling */
+.scratch-section {
+  margin-bottom: 40px;
+}
+
+.scratch-section h2 {
+  border-bottom: 2px solid black;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+/* Centered Image */
+.scratch-image {
+  display: block;
+  margin: 15px auto;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* Back to Top Button */
+.scratch-back-to-top {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.scratch-back-to-top a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.scratch-back-to-top a:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Video Styling */
+.scratch-video iframe {
+  display: block;
+  margin: 0 auto;
+}
+

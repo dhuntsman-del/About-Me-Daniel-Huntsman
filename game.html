@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Number Guessing Game</title>
+<link rel="stylesheet" href="styles.css" />
+
+<style>
+    body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        background: linear-gradient(#0a1a3c, #1d4f91); /* navy → blue */
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .game-box {
+        background: white;
+        width: 380px;
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        color: #0a1a3c;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+        animation: slideUp 0.8s ease-out;
+    }
+
+    @keyframes slideUp {
+        from { opacity: 0; transform: translateY(40px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+        margin-top: 0;
+        color: #0a1a3c;
+        font-size: 28px;
+        letter-spacing: 1px;
+    }
+
+    input {
+        padding: 12px;
+        width: 90px;
+        font-size: 18px;
+        border: 2px solid #1d4f91;
+        border-radius: 10px;
+        text-align: center;
+        color: #0a1a3c;
+        margin-top: 10px;
+    }
+
+    button {
+        padding: 10px 20px;
+        margin: 10px 5px;
+        font-size: 16px;
+        background-color: #1d4f91; /* Blue */
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    button:hover {
+        background-color: #153c6b;
+        transform: scale(1.05);
+    }
+
+    .message {
+        min-height: 40px;
+        margin-top: 15px;
+        font-size: 18px;
+        transition: 0.3s ease-in-out;
+    }
+
+    .message.win {
+        color: green;
+        font-weight: bold;
+        animation: pop 0.5s ease-out;
+    }
+
+    @keyframes pop {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+    }
+
+    .timer {
+        margin-top: 10px;
+        font-size: 18px;
+        color: #1d4f91;
+        font-weight: bold;
+    }
+
+    .attempts {
+        margin-top: 5px;
+        font-size: 14px;
+        opacity: 0.8;
+    }
+</style>
+</head>
+<body>
+<div class="top-nav">
+  <a href="resume.html">Professional Page</a>
+  <a href="scratch.html">Climbing</a>
+</div>
+
+<div class="game-box">
+    <h1>Number Guessing Game</h1>
+    <p>Guess a number between <strong>1 and 100</strong></p>
+
+    <input type="number" id="guessInput" />
+    <br>
+    <button onclick="makeGuess()">Guess</button>
+    <button onclick="startGame()">Restart</button>
+
+    <div class="timer" id="timer">Time Left: 30s</div>
+    <div class="message" id="messageBox"></div>
+    <div class="attempts" id="attemptCount"></div>
+</div>
+
+<script>
+let randomNumber;
+let attempts;
+let timeLeft = 30;
+let timerInterval;
+
+function startGame() {
+    randomNumber = Math.floor(Math.random() * 100) + 1;
+    attempts = 0;
+    timeLeft = 30;
+
+    document.getElementById("messageBox").innerText = "";
+    document.getElementById("messageBox").classList.remove("win");
+    document.getElementById("attemptCount").innerText = "";
+    document.getElementById("timer").innerText = "Time Left: 30s";
+    document.getElementById("guessInput").value = "";
+
+    clearInterval(timerInterval);
+    timerInterval = setInterval(updateTimer, 1000);
+}
+
+function updateTimer() {
+    timeLeft--;
+    document.getElementById("timer").innerText = `Time Left: ${timeLeft}s`;
+
+    if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        document.getElementById("messageBox").innerHTML =
+            "<span style='color:red; font-weight:bold;'>Time’s up! Restart to play again.</span>";
+    }
+}
+
+function makeGuess() {
+    const guess = Number(document.getElementById("guessInput").value);
+
+    if (!guess || guess < 1 || guess > 100) {
+        document.getElementById("messageBox").innerText =
+            "Enter a number between 1 and 100!";
+        return;
+    }
+
+    attempts++;
+
+    if (guess === randomNumber) {
+        document.getElementById("messageBox").innerHTML =
+            "🎉 Correct! You guessed it!";
+        document.getElementById("messageBox").classList.add("win");
+        document.getElementById("attemptCount").innerText = `Attempts: ${attempts}`;
+        clearInterval(timerInterval);
+        return;
+    }
+
+    if (timeLeft <= 0) return;
+
+    if (guess < randomNumber) {
+        document.getElementById("messageBox").innerText = "Too low! Try again.";
+    } else {
+        document.getElementById("messageBox").innerText = "Too high! Try again.";
+    }
+
+    document.getElementById("attemptCount").innerText = `Attempts: ${attempts}`;
+}
+
+startGame();
+</script>
+
+</body>
+</html>

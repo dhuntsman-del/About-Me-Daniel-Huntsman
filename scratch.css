@@ -1,0 +1,73 @@
+/* ===== GLOBAL ===== */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #0A1A44; /* Navy Blue */
+  color: white;
+}
+
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 24px;
+  font-weight: 500;
+}
+
+.navbar nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+  background-color: #001F3F; /* Deep Navy */
+  color: white;
+}
+
+.primary-btn {
+  background-color: #ffffff;
+  color: #001F3F;
+  border: none;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.primary-btn:hover {
+  background-color: #e1e1e1;
+}
+
+/* ===== CONTENT SECTION ===== */
+.content-section {
+  padding: 60px 40px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.content-section h2 {
+  color: #001F3F;
+  margin-bottom: 10px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background-color: #0A1A44;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
